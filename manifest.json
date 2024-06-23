@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "tr-d-nl",
+  "version": "1.0",
+  "description": "Remove new line characters from clipboard",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "tr-d-nl.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "commands": {
+    "tr-d-nl-command": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+L"
+      },
+      "description": "Send a 'tr-d-nl-command' event to the extension"
+    }
+  },
+  "options_ui": {
+    "page": "options.html"
+  },
+  "permissions": [
+    "clipboardWrite",
+    "clipboardRead",
+    "activeTab"
+  ]
+}
